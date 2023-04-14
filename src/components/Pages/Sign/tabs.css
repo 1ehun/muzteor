@@ -1,0 +1,70 @@
+.tablink {
+    width:50%;
+    background: none;
+    border: none;
+    flex: 1 0;
+    padding: 16px;
+    cursor: pointer;
+    color: #a6a6a6;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    box-shadow: inset 0 -1px 0 0 #ededed;
+    text-align: center;
+}
+
+.tablink-active{
+        cursor: default;
+        color: #262626;
+        box-shadow: inset 0 -3px 0 -1px gray;
+}
+
+
+
+
+
+
+
+
+
+.form_toggle {
+    width:401px;
+	display: inline-block;
+	overflow: hidden;
+    color: #a6a6a6;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+}
+.form_toggle-item {
+
+	display: inline-block;
+}
+.form_toggle-item input[type=radio] {
+	display: none;
+}
+.form_toggle-item label {
+    box-shadow: inset 0 -1px 0 0 #ededed;
+    justify-content: center;
+    width: 200px;
+    display: flex;
+	line-height: 34px;    
+	border-right: none;
+	cursor: pointer;
+	user-select: none;   
+}
+ 
+
+ 
+/* Checked */
+.form_toggle .item-1 input[type=radio]:checked + label {
+    cursor: default;
+    color: #262626;
+    box-shadow: inset 0 -3px 0 -1px gray;
+}
+.form_toggle .item-2 input[type=radio]:checked + label {
+    cursor: default;
+    color: #262626;
+    box-shadow: inset 0 -3px 0 -1px gray;
+}

@@ -1,0 +1,9 @@
+.content {
+    height: 1000px;
+    width: 100%;
+    justify-content: center;
+}
+
+.content-block {
+width: 100%;
+}

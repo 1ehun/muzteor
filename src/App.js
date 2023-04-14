@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Layout from './components/Layout';
+import AddTabs from './components/AddTabs';
+import NotFound from './components/Pages/NotFound';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
+import './index.css'
+import Sign from './components/Pages/Sign';
+import Main from './components/Pages/Main';
+import Chords from './components/Pages/Chords';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Layout>
+        <Switch>
+          <Route exact path='/'>
+            <Main/>
+            </Route>
+            <Route exact path='/sign'>
+            <Sign/>
+            </Route>
+            <Route exact path='/addTabs'>
+            <AddTabs/>
+            </Route>
+            <Route exact path='/chords'>
+            <Chords/>
+            </Route>
+            <Route >
+              <NotFound/>
+            </Route>
+        </Switch>
+      </Layout>
+    </Router>
+   
+    
   );
 }
 

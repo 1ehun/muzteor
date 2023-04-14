@@ -1,0 +1,20 @@
+.sign-in-form-ul {
+    padding-left: 18px;
+    list-style-type: disc;
+}
+
+.sign-in-form-li {
+    font-size: 14px;
+    line-height: 20px;
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sign-in-form-span {
+    position: relative;
+    left: -7px;
+}
+
+.sign-in-form-list {
+    margin-top: 5px;
+}

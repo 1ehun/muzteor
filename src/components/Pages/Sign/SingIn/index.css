@@ -1,0 +1,101 @@
+.sign-in-block {
+    padding: 24px 32px 32px;
+}
+
+.sign-in-text {
+    font-size: 14px;
+    line-height: 18px;
+    color: gray;
+    margin-bottom: 12px;
+    font-family: Inter,Roboto,sans-serif;
+    font-weight: 400;
+}
+
+.sign-in-input-container {
+    display: flex;
+    height: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ededed;
+    margin-top: 8px;
+}
+
+.sign-in-input {
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: inset 0 0 0 1px #d9d9d9;
+    background-color: #fff;
+    border: none;
+    height: 100%;
+    padding-left: 16px;
+    padding-right: 8px;
+    outline: none;
+    font-size: 14px;
+    line-height: 20px;
+    caret-color: #4abaae;
+}
+
+.sign-in-social-buttons {
+    display: flex;
+}
+
+.sign-in-social-buttons-item {
+    margin-right: 16px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.sign-in-social-buttons-item-img {
+    width: 22px;
+    height: 22px;
+    padding: 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+
+.sign-in-form {
+    margin-top: 30px;
+}
+
+.sign-in-form-forgot {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sign-in-form-forgot-link {
+    color: #4abaae;
+    padding: 0;
+    margin: 10px 0;
+    font-size: 14px;
+    background: transparent;
+    height: 0;
+    font-family: Inter,Roboto,sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.sign-in-form-captcha {
+    margin-top:15px;
+    display: flex;
+    justify-content: center;
+}
+
+.sign-in-form-button{
+    margin-top:35px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4abaae;
+    height: 48px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 20px;
+    font-weight: 700;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+}
+
