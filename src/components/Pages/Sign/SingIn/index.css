@@ -3,6 +3,7 @@
 }
 
 .sign-in-text {
+    display: flex;
     font-size: 14px;
     line-height: 18px;
     color: gray;

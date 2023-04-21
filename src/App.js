@@ -12,6 +12,7 @@ import './index.css'
 import Sign from './components/Pages/Sign';
 import Main from './components/Pages/Main';
 import Chords from './components/Pages/Chords';
+import Modal from './components/Modal';
 
 function App() {
   return (
@@ -29,6 +30,10 @@ function App() {
             </Route>
             <Route exact path='/chords'>
             <Chords/>
+            </Route>
+            <Route exact path='/modal'>
+              <Modal/>
+            {/* <Modal value={<Sign/>}/> */}
             </Route>
             <Route >
               <NotFound/>
