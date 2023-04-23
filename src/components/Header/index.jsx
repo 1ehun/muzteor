@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import './index.css'
 
 import logo from '../images/main-logo.png'
@@ -12,12 +12,15 @@ import { Link } from 'react-router-dom';
 import Sign from '../Pages/Sign';
 import useOutsideClick from '../../hooks/useOutsideClick';
 import Modal from '../Modal';
+import { ThemeContext } from '../../App';
 
 const Header = (props) => {
 
-  const [isSignModalOpen,setIsSignModalOpen] = useState(false);
+// dark theme --
+  const theme = useContext(ThemeContext)
+  console.log(theme)
 
-  
+  const [isSignModalOpen,setIsSignModalOpen] = useState(false);
 
   const modalRef = useRef(null)
 
@@ -61,7 +64,8 @@ const Header = (props) => {
             <div style={{paddingLeft: '10px'}}><Link to='/addTabs' className='header-button-text'>Добавить подбор</Link></div>
           </button>
           <a className='header-papers'>
-            <img src={headerArticleIco} className='header-papers-ico'></img>
+            <Link to='/addArticle'>            <img src={headerArticleIco} className='header-papers-ico'></img></Link>
+
           </a>
           <a className='header-notification'>
             <img src={HeaderNotifIco} className='header-notification-ico'></img>

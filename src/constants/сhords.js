@@ -1,5 +1,4 @@
 
-
 const chords = {
     am: {
     name: 'Am',

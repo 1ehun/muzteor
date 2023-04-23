@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from './components/Layout';
 import AddTabs from './components/AddTabs';
 import NotFound from './components/Pages/NotFound';
@@ -12,10 +12,29 @@ import './index.css'
 import Sign from './components/Pages/Sign';
 import Main from './components/Pages/Main';
 import Chords from './components/Pages/Chords';
-import Modal from './components/Modal';
+import Articles from './components/Pages/Articles';
+
+
+
+// dark theme ---
+export const THEMES = {
+  light: 'light',
+  dark: 'dark'
+}
+
+export const ThemeContext = React.createContext(THEMES.light)
+// dark theme --/
+
+
 
 function App() {
+  const [theme, setTheme] = useState(THEMES.light)
+  
+
+
   return (
+    //шо робить хз, как перекинуть функцию изменения состояния темы, глобальная переменная?
+    <ThemeContext.Provider value={theme} changeValue={setTheme}>
     <Router>
       <Layout>
         <Switch>
@@ -31,9 +50,8 @@ function App() {
             <Route exact path='/chords'>
             <Chords/>
             </Route>
-            <Route exact path='/modal'>
-              <Modal/>
-            {/* <Modal value={<Sign/>}/> */}
+            <Route exact path='/addArticle'>
+            <Articles/>
             </Route>
             <Route >
               <NotFound/>
@@ -41,6 +59,7 @@ function App() {
         </Switch>
       </Layout>
     </Router>
+    </ThemeContext.Provider>
    
     
   );

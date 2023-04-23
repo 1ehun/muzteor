@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import './index.css'
 import './darkslider.css'
 
@@ -15,15 +15,31 @@ import githunIco from '../images/github_new.png'
 import youtubeIco from '../images/youtube_new.svg'
 import headerArticleIco from '../images/header-papers-icon.png'
 import { Link } from "react-router-dom";
+import { THEMES, ThemeContext } from "../../App";
 
 const Footer = (props) => {
 
+  //dark theme --
+  const theme = useContext(ThemeContext)
+  console.log({theme})
+
+  let footerClasses = 'footer';
+  if (theme === THEMES.dark) {
+    footerClasses += ' footer-dark'
+  }
 
   const [darkTheme,setDarkTheme] = useState(false)
   console.log({darkTheme})
 
+  const setChangeTheme = () => {
+    setDarkTheme(!darkTheme)
+    console.log(theme)
+  }
+
+  
+
     return (
-<footer className='footer'>
+<footer className={footerClasses}>
         <div className='footer-promo'>
 
           <div className='footer-promo-hover'>
@@ -122,7 +138,9 @@ const Footer = (props) => {
           <div className='footer-menu-darkmode'>
             <p className='footer-menu-darkmode-text'>Темный режим</p>
             <label class="footer-menu-checkbox">
-              <input type="checkbox" checked={darkTheme} onChange={() => setDarkTheme(!darkTheme)}/>
+              <input type="checkbox" checked={darkTheme} onChange={() => {
+                  setChangeTheme()
+                }}/>
               <span class="footer-menu-checkbox-switch"></span>
             </label>
           </div>

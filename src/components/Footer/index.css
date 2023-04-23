@@ -6,6 +6,10 @@
     flex-wrap: wrap;
 }
 
+.footer-dark {
+    background: blue;
+}
+
 .footer-promo {
     margin-top: 50px;
     border-radius: 8px;
