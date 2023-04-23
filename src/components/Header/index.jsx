@@ -64,7 +64,7 @@ const Header = (props) => {
             <div style={{paddingLeft: '10px'}}><Link to='/addTabs' className='header-button-text'>Добавить подбор</Link></div>
           </button>
           <a className='header-papers'>
-            <Link to='/addArticle'>            <img src={headerArticleIco} className='header-papers-ico'></img></Link>
+            <Link to='/addArticle'><img src={headerArticleIco} className='header-papers-ico'></img></Link>
 
           </a>
           <a className='header-notification'>
@@ -81,6 +81,7 @@ const Header = (props) => {
             <Modal value={<Sign close={closeModal}/>} />
 
           )}
+        {/* fdadfdsaf */}
           </div>
         </div>
       </header>
