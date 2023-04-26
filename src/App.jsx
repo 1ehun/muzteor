@@ -16,6 +16,8 @@ import Articles from './components/Pages/Articles';
 
 
 
+
+
 // dark theme ---
 export const THEMES = {
   light: 'light',
@@ -34,7 +36,7 @@ function App() {
 
   return (
     //шо робить хз, как перекинуть функцию изменения состояния темы, глобальная переменная?
-    <ThemeContext.Provider value={theme} changeValue={setTheme}>
+    <ThemeContext.Provider value={{theme,setTheme}}>
     <Router>
       <Layout>
         <Switch>

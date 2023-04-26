@@ -20,21 +20,15 @@ import { THEMES, ThemeContext } from "../../App";
 const Footer = (props) => {
 
   //dark theme --
-  const theme = useContext(ThemeContext)
-  console.log({theme})
+  const {theme, setTheme} = useContext(ThemeContext)
 
   let footerClasses = 'footer';
   if (theme === THEMES.dark) {
     footerClasses += ' footer-dark'
   }
+  console.log({theme})
 
-  const [darkTheme,setDarkTheme] = useState(false)
-  console.log({darkTheme})
-
-  const setChangeTheme = () => {
-    setDarkTheme(!darkTheme)
-    console.log(theme)
-  }
+  
 
   
 
@@ -138,8 +132,11 @@ const Footer = (props) => {
           <div className='footer-menu-darkmode'>
             <p className='footer-menu-darkmode-text'>Темный режим</p>
             <label class="footer-menu-checkbox">
-              <input type="checkbox" checked={darkTheme} onChange={() => {
-                  setChangeTheme()
+              <input 
+              type="checkbox"
+              checked={theme} 
+              onChange={() => {
+                setTheme(!theme)
                 }}/>
               <span class="footer-menu-checkbox-switch"></span>
             </label>
