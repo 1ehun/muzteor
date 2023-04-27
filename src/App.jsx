@@ -19,18 +19,18 @@ import Articles from './components/Pages/Articles';
 
 
 // dark theme ---
-export const THEMES = {
-  light: 'light',
-  dark: 'dark'
-}
+// export const THEMES = {
+//   light: 'light',
+//   dark: 'dark'
+// }
 
-export const ThemeContext = React.createContext(THEMES.light)
+export const ThemeContext = React.createContext(false)
 // dark theme --/
 
 
 
 function App() {
-  const [theme, setTheme] = useState(THEMES.light)
+  const [theme, setTheme] = useState(false)
   
 
 

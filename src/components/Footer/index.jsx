@@ -15,7 +15,7 @@ import githunIco from '../images/github_new.png'
 import youtubeIco from '../images/youtube_new.svg'
 import headerArticleIco from '../images/header-papers-icon.png'
 import { Link } from "react-router-dom";
-import { THEMES, ThemeContext } from "../../App";
+import {ThemeContext } from "../../App";
 
 const Footer = (props) => {
 
@@ -23,7 +23,7 @@ const Footer = (props) => {
   const {theme, setTheme} = useContext(ThemeContext)
 
   let footerClasses = 'footer';
-  if (theme === THEMES.dark) {
+  if (theme === true) {
     footerClasses += ' footer-dark'
   }
   console.log({theme})

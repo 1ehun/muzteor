@@ -22,9 +22,9 @@ const Header = (props) => {
 
   const [isSignModalOpen,setIsSignModalOpen] = useState(false);
 
-  const modalRef = useRef(null)
+  const modalRef = useRef(null);
 
-  useOutsideClick(modalRef, () => setIsSignModalOpen(false))
+  useOutsideClick(modalRef, () => setIsSignModalOpen(false));
 
   const closeModal = () => {
     setIsSignModalOpen(!isSignModalOpen)
@@ -78,8 +78,7 @@ const Header = (props) => {
           >А</button>  
 
           {isSignModalOpen && (
-            <Modal value={<Sign close={closeModal}/>} />
-
+            <Modal ref={modalRef} value={<Sign close={closeModal}/>} />
           )}
         {/* fdadfdsaf */}
           </div>

@@ -11,7 +11,7 @@ import captcha from '../../../images/captcha.png'
 const SignIn = (props) => {
     return (
         <div className="sign-in-block">
-            <h1 className="sign-in-text">Войдите через сервисы:</h1>
+            {/* <h1 className="sign-in-text">Войдите через сервисы:</h1>
             <div className="sign-in-social-buttons">
                 <div className="sign-in-social-buttons-item">
                     <img className="sign-in-social-buttons-item-img" src={googlesign}></img>
@@ -22,7 +22,7 @@ const SignIn = (props) => {
                 <div  className="sign-in-social-buttons-item">
                     <img className="sign-in-social-buttons-item-img" src={mailrusign}></img>
                 </div>
-            </div>
+            </div> */}
             <div className="sign-in-form">
             <div className="sign-in-input-container">
                 <input className='sign-in-input' placeholder='Email'></input>
@@ -33,9 +33,9 @@ const SignIn = (props) => {
             <div className="sign-in-form-forgot">
                 <a href="#" className="sign-in-form-forgot-link">Забыли пароль?</a>
             </div>
-            <div className="sign-in-form-captcha">
+            {/* <div className="sign-in-form-captcha">
             <img src={captcha} style={{height: '84px', width: '304px'}}></img>
-            </div>
+            </div> */}
             <button
               className='sign-in-form-button'>Войти</button>
             </div>

@@ -11,7 +11,7 @@ import './index.css'
 const singUp = (props) => {
     return (
         <div className="sign-in-block">
-        <h1 className="sign-in-text">Зарегистрируйтесь через сервисы:</h1>
+        {/* <h1 className="sign-in-text">Зарегистрируйтесь через сервисы:</h1>
         <div className="sign-in-social-buttons">
             <div className="sign-in-social-buttons-item">
                 <img className="sign-in-social-buttons-item-img" src={googlesign}></img>
@@ -22,7 +22,7 @@ const singUp = (props) => {
             <div  className="sign-in-social-buttons-item">
                 <img className="sign-in-social-buttons-item-img" src={mailrusign}></img>
             </div>
-        </div>
+        </div> */}
         <div className="sign-in-form">
         <div className="sign-in-input-container">
             <input className='sign-in-input' placeholder='Email'></input>
@@ -38,9 +38,9 @@ const singUp = (props) => {
             <li className="sign-in-form-li"><span className="sign-in-form-span">цифра</span></li>
            </ul>
         </div>
-        <div className="sign-in-form-captcha">
+        {/* <div className="sign-in-form-captcha">
         <img src={captcha} style={{height: '84px', width: '304px'}}></img>
-        </div>
+        </div> */}
         <button
           className='sign-in-form-button'>Зарегистрироваться</button>
         </div>
