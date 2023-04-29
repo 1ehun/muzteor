@@ -48,6 +48,7 @@ const Articles = () => {
                           {/* голый текст */}
                             <div className="preview">{value}</div> 
                             <div dangerouslySetInnerHTML={{__html: value}}></div>
+                            
                         </div>
                     </div>
 

@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import './index.css'
 import './tabs.css'
 import closeIco from '../../images/close-grey.svg'
-import SignIn from "./SingIn";
+import SignIn from "./SignIn";
 import SignUp from "./SignUp";
+import { ThemeContext } from '../../../App';
 
 const Sign = (props) => {
+
+    const {theme, setTheme} = useContext(ThemeContext);
+
+    let signContentClasses = "sign-content"
+
+    if (theme  === true) {
+        signContentClasses += ' sign-content-dark'
+    }
 
     const [signType, setSignType] = useState(<SignIn />);
     const [buttonState, setButtonState] = useState(false)
@@ -27,12 +36,12 @@ const Sign = (props) => {
 
     return (
         <div className="sign-main">
-            <div className="sing-content">
+            <div className={signContentClasses}>
                 <div className="sign-content-box">
-                    <div className="sing-content-close">
+                    <div className="sign-content-close">
                         <img height='20px' src={closeIco} style={{ padding: '15px 15px 5px 0px' }} onClick={props.close}></img>
                     </div>
-                    <div className="sing-tabs">
+                    <div className="sign-tabs">
 
                         <div class="form_toggle">
                             <div className="form_toggle-item item-1">

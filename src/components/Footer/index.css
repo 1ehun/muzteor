@@ -1,4 +1,5 @@
 .footer {
+    transition: ease-in-out 0.5s;
     justify-content: center;
     background: #4b4b4b;
     height: 400px;
@@ -7,7 +8,8 @@
 }
 
 .footer-dark {
-    background: blue;
+    transition: ease-in-out 0.5s;
+    background: #383838;
 }
 
 .footer-promo {
@@ -20,8 +22,14 @@
     background: rgba(0,0,0,.35);
 }
 
+.footer-dark-promo * {
+    transition: fill .15s ease-in-out,color .3s ease-in-out;
+    color: #4aadbaba;
+    fill: #4aadbaba;
+}
+
 .footer-promo-buttons {
-    transition: all .2s ease-in-out,color .2s ease-in-out;
+  
     border: none;
     display: flex;
     background: none;
@@ -29,6 +37,12 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+.footer-promo-buttons:hover * {
+    transition: fill .15s ease-in-out,color .3s ease-in-out;
+    color: #4aadba;
+    fill: #4aadba;
 }
 
 .footer-promo-imgs {
@@ -41,13 +55,8 @@
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 700;
-    transition: all .2s ease-in-out,color .2s ease-in-out;
 }
 
-.footer-promo-text:hover {
-    transition: all .2s ease-in-out,color .2s ease-in-out;
-    color: #4aadba;
-}
 
 .footer-promo-hover {
     align-items: center;
@@ -150,7 +159,7 @@
 }
 
 .footer-menu-social-ico:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 .footer-promo-link {

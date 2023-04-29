@@ -15,9 +15,6 @@ import Chords from './components/Pages/Chords';
 import Articles from './components/Pages/Articles';
 
 
-
-
-
 // dark theme ---
 // export const THEMES = {
 //   light: 'light',
