@@ -1,0 +1,14 @@
+.ql-align-center {
+  display: flex;
+  justify-content: center;
+}
+
+.ql-align-right {
+    display: flex;
+    justify-content: end;
+}
+
+.ql-align-justify {
+    display: flex;
+    text-align: justify;
+}

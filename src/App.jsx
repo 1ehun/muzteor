@@ -13,6 +13,8 @@ import Sign from './components/Pages/Sign';
 import Main from './components/Pages/Main';
 import Chords from './components/Pages/Chords';
 import Articles from './components/Pages/Articles';
+import Artists from './components/Pages/Artists';
+import AddArticles from './components/Pages/AddArticles';
 
 
 // dark theme ---
@@ -28,11 +30,12 @@ export const ThemeContext = React.createContext(false)
 
 function App() {
   const [theme, setTheme] = useState(false)
+
   
 
 
   return (
-    //шо робить хз, как перекинуть функцию изменения состояния темы, глобальная переменная?
+  
     <ThemeContext.Provider value={{theme,setTheme}}>
     <Router>
       <Layout>
@@ -50,6 +53,12 @@ function App() {
             <Chords/>
             </Route>
             <Route exact path='/addArticle'>
+            <AddArticles/>
+            </Route>
+            <Route exact path='/artists'>
+            <Artists/>
+            </Route>
+            <Route exact path='/articles'>
             <Articles/>
             </Route>
             <Route >
