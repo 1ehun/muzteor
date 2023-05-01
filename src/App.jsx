@@ -15,6 +15,7 @@ import Chords from './components/Pages/Chords';
 import Articles from './components/Pages/Articles';
 import Artists from './components/Pages/Artists';
 import AddArticles from './components/Pages/AddArticles';
+import Songs from './components/Pages/Songs';
 
 
 // dark theme ---
@@ -60,6 +61,9 @@ function App() {
             </Route>
             <Route exact path='/articles'>
             <Articles/>
+            </Route>
+            <Route exact path='/songs'>
+            <Songs/>
             </Route>
             <Route >
               <NotFound/>

@@ -6,6 +6,7 @@ import 'react-quill/dist/quill.snow.css';
 import './index.css'
 import './qlStyles.css'
 import { ThemeContext } from "../../../App";
+import { useDispatch, useSelector } from "react-redux";
 
 const modules = {
     toolbar: [
@@ -48,7 +49,14 @@ const formats = [
 
 
 const AddArticles = () => {
+    const dispatch = useDispatch()
+    const addArticles = useSelector(state => state.article.article)
+    const addHead = useDispatch(state => state.article.headArticle)
+    console.log(addHead + '2211')
 
+    const addArticle2 = (articles) => {
+        dispatch({type: 'ADD_ARTICLE', payload: articles })
+    }
 
 
     const [value, setValue] = useState('');
@@ -71,9 +79,7 @@ const AddArticles = () => {
                 </div>
 
                     <div className="container">
-
                         <div className="row">
-
                             <div className="editor">
                                 <ReactQuill 
                                 theme="snow" 
@@ -89,7 +95,7 @@ const AddArticles = () => {
                           <button
                                 className='content-button-add'
                                 style={{display: 'inline-block'}}
-                              
+                                onClick={() => addArticle2(value)}
                                 >
                                 Опубликовать
                             </button>

@@ -3,7 +3,7 @@ const chords = {
     am: {
     name: 'Am',
     img: '/chordImg/am.png'
-},
+    },
     a: {
     name: 'A',
     img: '/chordImg/a.png'
