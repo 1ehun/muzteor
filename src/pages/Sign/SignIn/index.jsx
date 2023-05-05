@@ -2,11 +2,11 @@ import React from "react";
 
 import './index.css'
 
-import googlesign from '../../../images/googleSign.png'
-import yandexsign from '../../../images/new-yandex-sign.svg'
-import mailrusign from '../../../images/mailru-sign.png'
+import googlesign from '../../../components/images/googleSign.png'
+import yandexsign from '../../../components/images/new-yandex-sign.svg'
+import mailrusign from '../../../components/images/mailru-sign.png'
 
-import captcha from '../../../images/captcha.png'
+import captcha from '../../../components/images/captcha.png'
 
 const SignIn = (props) => {
     return (

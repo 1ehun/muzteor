@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import './index.css'
 import './tabs.css'
-import closeIco from '../../images/close-grey.svg'
+import closeIco from '../../components/images/close-grey.svg'
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
-import { ThemeContext } from '../../../App';
+import { ThemeContext } from '../../App';
 
 const AUTH_MODE = {
     signIn: 'signIn',

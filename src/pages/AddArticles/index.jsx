@@ -5,7 +5,7 @@ import 'react-quill/dist/quill.snow.css';
 
 import './index.css'
 import './qlStyles.css'
-import { ThemeContext } from "../../../App";
+import { ThemeContext } from "../../App";
 import { useDispatch, useSelector } from "react-redux";
 
 const modules = {

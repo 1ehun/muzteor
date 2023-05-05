@@ -10,7 +10,7 @@ import {ReactComponent as LogoNotification} from '../images/header-notification-
 import {ReactComponent as LogoArticleIco} from '../images/header-article-icon.svg'
 
 import { Link } from 'react-router-dom';
-import Sign from '../Pages/Sign';
+import Sign from '../../pages/Sign';
 import useOutsideClick from '../../hooks/useOutsideClick';
 import Modal from '../Modal';
 import { ThemeContext } from '../../App';

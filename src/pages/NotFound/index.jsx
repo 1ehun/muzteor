@@ -1,7 +1,7 @@
 import React from "react";
 import './index.css'
 
-import notFoundImg from '../../images/not-found-img.jpg'
+import notFoundImg from '../../components/images/not-found-img.jpg'
 
 const NotFound = () => (
 

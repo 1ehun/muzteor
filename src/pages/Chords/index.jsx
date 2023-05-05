@@ -1,5 +1,5 @@
 import React from "react";
-import chords from "../../../constants/сhords";
+import chords from "../../constants/сhords";
 import './index.css'
 import Card from "./Card";
 

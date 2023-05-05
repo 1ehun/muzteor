@@ -1,8 +1,10 @@
+import { ADD_TABS } from "../actionTypes/addTabs"
+
 const defaultState = {
     tabs: 'a'
 }
 
-const ADD_TABS = 'ADD_TABS'
+
 
 
 export const addTabsReducer = (state = defaultState, action) => {

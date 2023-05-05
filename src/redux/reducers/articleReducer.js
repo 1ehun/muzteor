@@ -1,8 +1,5 @@
-// const defaultState = {
-//     article5: '37',
-//     // article4: '67'
-//     headArticle: 'head'
-// }
+import { ADD_ARTICLE } from "../actionTypes/addArticle"
+
 
 const defaultState = {
     articles: []
@@ -10,7 +7,7 @@ const defaultState = {
 
 
 
-const ADD_ARTICLE = 'ADD_ARTICLE';
+
 
 export const articleReducer = (state = defaultState, action) => {
     switch (action.type) {

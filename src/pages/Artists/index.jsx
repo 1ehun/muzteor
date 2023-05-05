@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../Chords/Card";
-import artists from "../../../constants/artists";
+import artists from "../../constants/artists";
 
 const Artists = (props) => {
     return (

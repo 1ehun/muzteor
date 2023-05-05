@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Layout from './components/Layout';
 import AddTabs from './components/AddTabs';
-import NotFound from './components/Pages/NotFound';
+import NotFound from './pages/NotFound';
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,13 +9,12 @@ import {
 } from "react-router-dom";
 
 import './index.css'
-import Sign from './components/Pages/Sign';
-import Main from './components/Pages/Main';
-import Chords from './components/Pages/Chords';
-import Articles from './components/Pages/Articles';
-import Artists from './components/Pages/Artists';
-import AddArticles from './components/Pages/AddArticles';
-import Songs from './components/Pages/Songs';
+import Main from './pages/Main';
+import Chords from './pages/Chords';
+import Articles from './pages/Articles';
+import Artists from './pages/Artists';
+import AddArticles from './pages/AddArticles';
+import Songs from './pages/Songs';
 
 
 // dark theme ---
@@ -43,9 +42,6 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <Main/>
-            </Route>
-            <Route exact path='/sign'>
-            <Sign/>
             </Route>
             <Route exact path='/addTabs'>
             <AddTabs/>
