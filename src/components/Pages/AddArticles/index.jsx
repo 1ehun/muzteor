@@ -49,19 +49,24 @@ const formats = [
 
 
 const AddArticles = () => {
-    const dispatch = useDispatch()
-    const addArticles = useSelector(state => state.article.article)
-    const addHead = useDispatch(state => state.article.headArticle)
-    console.log(addHead + '2211')
+    
+    const [body, setBody] = useState('');
+    const [title, setTitle] = useState('')
 
-    const addArticle2 = (articles) => {
-        dispatch({type: 'ADD_ARTICLE', payload: articles })
+    const dispatch = useDispatch()
+
+
+    const addArticle = () => {
+        dispatch({
+            type: 'ADD_ARTICLE',
+             payload: {
+                title,
+                body
+             } 
+            })
     }
 
 
-    const [value, setValue] = useState('');
-    const [article, setArticle] = useState('');
-    const [articleHead, setArticleHead] = useState('')
 
     return (
         <div className="main">
@@ -73,8 +78,8 @@ const AddArticles = () => {
                     type="text"
                     className='article-input' 
                     placeholder='Название статьи'
-                    value={articleHead}
-                    onChange={(e) => setArticleHead(e.target.value)}
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
                     ></input>
                 </div>
 
@@ -83,8 +88,8 @@ const AddArticles = () => {
                             <div className="editor">
                                 <ReactQuill 
                                 theme="snow" 
-                                value={value} 
-                                onChange={setValue} 
+                                value={body} 
+                                onChange={setBody} 
                                 className="editor-input"
                                 modules={modules}
                                 formats={formats}
@@ -95,20 +100,20 @@ const AddArticles = () => {
                           <button
                                 className='content-button-add'
                                 style={{display: 'inline-block'}}
-                                onClick={() => addArticle2(value)}
+                                onClick={addArticle}
                                 >
                                 Опубликовать
                             </button>
                             <button
                                 className='content-button-add'
                                 style={{display: 'inline-block'}}
-                                onClick={() => setArticle(value)}
+                                onClick={() => {}}
                                 >
                                 Предпросмотр
                             </button>
                           </div>
                             {/* <div className="preview">{value}</div>  */}
-                            <div className="preview" dangerouslySetInnerHTML={{__html: article}}></div>
+                            {/* <div className="preview" dangerouslySetInnerHTML={{__html: articles}}></div> */}
                             
                         </div>
                     </div>

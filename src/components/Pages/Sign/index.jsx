@@ -6,6 +6,11 @@ import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import { ThemeContext } from '../../../App';
 
+const AUTH_MODE = {
+    signIn: 'signIn',
+    signUp: 'signUp'
+}
+
 const Sign = (props) => {
 
     const {theme, setTheme} = useContext(ThemeContext);
@@ -16,22 +21,8 @@ const Sign = (props) => {
         signContentClasses += ' sign-content-dark'
     }
 
-    const [signType, setSignType] = useState(<SignIn />);
-    const [buttonState, setButtonState] = useState(false)
+    const [buttonState, setButtonState] = useState(AUTH_MODE.signIn)
 
-    const changeTypeSign = (battonBool) => {
-        if (battonBool === true) {
-            setSignType(<SignIn />);
-        } else {
-            setSignType(<SignUp />);
-        }
-    }
-
-    const changeButtonState = () => {
-        changeTypeSign(buttonState)
-        setButtonState(!buttonState)
-        console.log(buttonState);
-    }
 
 
     return (
@@ -50,8 +41,8 @@ const Sign = (props) => {
                                     type="radio"
                                     name="radio"
                                     value="off"
-                                    checked={!buttonState}
-                                    onClick={() => changeButtonState()}></input>
+                                    checked={buttonState === AUTH_MODE.signIn}
+                                    onClick={() => setButtonState(AUTH_MODE.signIn)}></input>
                                 <label for="fid-1">Вход</label>
                             </div>
                             <div className="form_toggle-item item-2">
@@ -60,15 +51,20 @@ const Sign = (props) => {
                                     type="radio"
                                     name="radio"
                                     value="on"
-                                    checked={buttonState}
-                                    onClick={() => changeButtonState()}></input>
+                                    checked={buttonState === AUTH_MODE.signUp}
+                                    onClick={() => setButtonState(AUTH_MODE.signUp)}></input>
                                 <label for="fid-2">Регистрация</label>
                             </div>
                         </div>
                     </div>
 
                 </div>
-                {signType}
+                {buttonState === AUTH_MODE.signIn ? (
+                    <SignIn/> 
+                    
+                ) : ( 
+                    <SignUp/>
+                )}
             </div>
 
         </div>
