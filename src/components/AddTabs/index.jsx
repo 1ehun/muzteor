@@ -2,6 +2,9 @@ import React, { useState } from "react";
 
 import './index.css'
 import { default as parseJsx, domToReact } from 'html-react-parser'
+import { useDispatch } from "react-redux";
+import { ADD_TABS } from "../../redux/actionTypes/addTabs";
+import { addTabsAction } from "../../redux/actionCreator/addTabs";
 // htmlreact parcer
 
 const Tab = (props) => (
@@ -9,11 +12,22 @@ const Tab = (props) => (
 );
 
 const AddTabs = () => {
+  const [artistName, setArtistName] = useState('');
+  const [songName, setSongName] = useState('')
   const [tabs, setTabs] = useState('');
   const [song, setSong] = useState('');
 
+  const dispatch = useDispatch()
+
   const addSong = (item) => {
+    const addTabsItem = {
+      artistName,
+      songName,
+      body: tabs,
+      id: Date.now()
+    }
     setSong(item)
+    dispatch(addTabsAction(addTabsItem))
   };
 
   const songHtml = song.replace(
@@ -44,13 +58,37 @@ const AddTabs = () => {
         <div className="main-content">
           <div className="main-content-block">
             <h1 className="main-content-header">Добавить подбор</h1>
+
+            <div className='article-input-container'>
+                    <input 
+                    type="text"
+                    className='article-input' 
+                    placeholder='Название группы'
+                    value={artistName}
+                    onChange={(e) => setArtistName(e.target.value)}
+                    ></input>
+                     
+                </div>
+
+                <div className='article-input-container'>
+                <input 
+                    type="text"
+                    className='article-input' 
+                    placeholder='Песня'
+                    value={songName}
+                    onChange={(e) => setSongName(e.target.value)}
+                    ></input>
+                </div>
+
+
+
             <button
               className='content-button-add'
               onClick={() => addSong(tabs)}
             >
               Добавить подбор
             </button>
-            <h2>{tabs}</h2>
+            <pre>{tabs}</pre>
             <textarea
               className='text-area'
               value={tabs}

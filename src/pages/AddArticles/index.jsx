@@ -7,6 +7,9 @@ import './index.css'
 import './qlStyles.css'
 import { ThemeContext } from "../../App";
 import { useDispatch, useSelector } from "react-redux";
+import { ADD_ARTICLE } from "../../redux/actionTypes/addArticle";
+import { addArticleAction } from "../../redux/actionCreator/addArticle";
+
 
 const modules = {
     toolbar: [
@@ -26,7 +29,6 @@ const modules = {
     ]
 }
 
-
 const formats = [
     "header",
     "bold",
@@ -45,28 +47,26 @@ const formats = [
     "font"
   ];
 
-
-
-
 const AddArticles = () => {
     
     const [body, setBody] = useState('');
     const [title, setTitle] = useState('')
+    const [brief, setBrief] = useState('')
 
     const dispatch = useDispatch()
 
-
     const addArticle = () => {
-        dispatch({
-            type: 'ADD_ARTICLE',
-             payload: {
-                title,
-                body
-             } 
-            })
+        const articleItem = {
+            title,
+            body,
+            brief,
+            id: Date.now()
+        }
+        dispatch(addArticleAction(articleItem))
+        setBody('')
+        setTitle('')
+        setBrief('')
     }
-
-
 
     return (
         <div className="main">
@@ -81,7 +81,20 @@ const AddArticles = () => {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     ></input>
+                     
                 </div>
+
+                <div className='article-input-container'>
+                <input 
+                    type="text"
+                    className='article-input' 
+                    placeholder='Краткое описание'
+                    value={brief}
+                    onChange={(e) => setBrief(e.target.value)}
+                    ></input>
+                </div>
+
+               
 
                     <div className="container">
                         <div className="row">

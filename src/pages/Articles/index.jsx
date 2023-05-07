@@ -1,27 +1,27 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+
+import './index.css'
 
 const Articles = (props) => {
     const dispatch = useDispatch() //dispatch нужен для изм состояния
     const articles = useSelector(state => state.article.articles)
 
-    const addArticle = (article) => {
-        dispatch({type: 'ADD_ARTICLE', payload: article })
-        dispatch({type: 'ADD_HEAD', payload: 'work' })
-    }
     console.log(articles)
     return(
         <div className="main">
             <div className="main-content">
                 <div className="main-content-block">
                 <h1 className="main-content-header">Добавленные статьи</h1>
-                <button onClick={() => addArticle(prompt())}>Добавить статью</button>
-                <button onClick={() => {}}>снят</button>
              
-                <div className="preview">{articles.map((item) => (
-                    <div>
-                        <h4>{item.title}</h4>
-                        <div dangerouslySetInnerHTML={{__html: item.body}}/>
+                <div className="articles-cards">{articles.map((item) => (
+                    <div className="articles-cards-item" >
+                        <Link className="article-cards-link" to={`articles/${item.id}`}>
+                        <h1 className="article-cards-head">{item.title}</h1>
+                        <p className="article-cards-title">{item.brief}</p>
+                        </Link>
+                       
                     </div>
                 ))}</div>
                 {/* <div className="preview">{article13}</div> */}

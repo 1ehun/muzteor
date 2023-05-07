@@ -1,7 +1,7 @@
 import { ADD_TABS } from "../actionTypes/addTabs"
 
 const defaultState = {
-    tabs: 'a'
+    tabs: []
 }
 
 
@@ -10,7 +10,19 @@ const defaultState = {
 export const addTabsReducer = (state = defaultState, action) => {
     switch(action.type) {
         case ADD_TABS:
-            return {...state, tabs: state.tabs + action.payload }
+            return {
+                ...state, 
+                tabs: [
+                    ...state.tabs,
+                    {
+                        artistName: action.payload.artistName,
+                        songName: action.payload.songName,
+                        body: action.payload.body,
+                        id: action.payload.id
+                    }
+
+                ]
+             }
         default:
             return state
     }
