@@ -35,7 +35,7 @@ const View = (props) => {
                                     )
                                 }
                                 else {
-                                    console.log('zalupa')
+                                    console.log('error')
                                 }
 
                             }
@@ -44,6 +44,7 @@ const View = (props) => {
                         (
                             songs.map((item) => {
                                 if (item.id == id) {
+                                    console.log(item.body)
                                     return (
                                         <div>
                                             <h1 className="main-content-header">{item.artistName} - {item.songName}</h1>
@@ -52,7 +53,7 @@ const View = (props) => {
                                     )
                                 }
                                 else {
-                                    console.log('zalupa')
+                                    console.log('error')
                                 }
 
                             }
