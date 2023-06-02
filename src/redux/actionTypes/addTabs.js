@@ -1,0 +1,1 @@
+export const ADD_TABS = 'ADD_TABS'

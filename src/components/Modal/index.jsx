@@ -1,15 +1,20 @@
-import React from "react";
+import React, { forwardRef } from "react";
+import { createPortal } from 'react-dom';
+import './index.css';
 
-import './index.css'
+const modalRoot = document.getElementById('modal-root');
 
-const Modal = (props) => {
-    return (
-        <div className="modal">
-            <div className="modal-content">
-                {props.value}
+const Modal = forwardRef((props, ref) => {
+    return createPortal(
+        (
+            <div className="modal">
+                <div ref={ref} className="modal-content">
+                    {props.value}
+                </div>
             </div>
-        </div>
-    )
-}
+        ),
+        modalRoot
+    );
+});
 
 export default Modal
